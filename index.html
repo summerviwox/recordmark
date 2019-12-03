@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>记录</title>
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="table-index">
+    <table id="table-table">
+        <tr v-for="x in itemss">
+            <td><div><img :data-item="JSON.stringify(x.items[0])"  :src="x.items[0].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[0].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[1])"  :src="x.items[1].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[1].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[2])"  :src="x.items[2].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[2].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[3])"  :src="x.items[3].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[3].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[4])"  :src="x.items[4].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[4].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[5])"  :src="x.items[5].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[5].msg}}</p></div></td>
+            <td><div><img :data-item="JSON.stringify(x.items[6])"  :src="x.items[6].item" onerror="getErrorImg(this)" onclick="onclickImg(this)"><p>{{x.items[6].msg}}</p></div></td>
+        </tr>
+    </table>
+</div>
+
+<div id="dialog-main">
+    <input type="text" class="dialog-input">
+    <div class="dialog-div">
+        <input type="button" value="取消" class="dialog-button" id="dialog-button-left" onclick="onclickDialog(this)"> <input type="button" value="确定"  class="dialog-button" id="dialog-button-right" onclick="onclickDialog(this)">
+    </div>
+</div>
+<img id="img-more" src="image/more.png" v-on:click="getMore()">
+<script src="js/table.js" type="text/javascript"></script>
+</body>
+</html>
